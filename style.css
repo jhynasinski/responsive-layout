@@ -154,3 +154,52 @@ header {
         height: clamp(45vh, 80vh, 90vh);
     }
 }
+
+@media (max-width: 582px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .redDiamonds {
+        margin-left: clamp(4rem, 6vw, 4rem);
+        margin-top: clamp(1rem, 3vh, 3rem);
+    }
+
+    .diamond {
+        width: clamp(7rem, 18vw, 12rem);
+        height: clamp(7rem, 18vw, 12rem);
+    }
+
+    .boxForLinesAndCircle {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: clamp(2rem, 4vh, 4rem);
+        margin-left: 6rem;
+        gap: clamp(1rem, 4vw, 2rem);
+    }
+
+    .blueLinesBox {
+        gap: clamp(1rem, 4vw, 2rem);
+    }
+
+    .blueLine {
+        width: clamp(8rem, 24vw, 16rem);
+        height: clamp(1.2rem, 3vw, 2.4rem);
+    }
+
+    .singleCircle {
+        width: clamp(8rem, 14vw, 12rem);
+        height: clamp(8rem, 14vw, 12rem);
+        top: clamp(-1rem, -1vw, 0);
+        flex-shrink: 0;
+    }
+
+    .colorChangingRectangle {
+        background-color: #0804fc;
+        height: clamp(22rem, 40vh, 40rem);
+        width: clamp(14rem, 50vw, 30rem);
+        margin-top: clamp(1rem, 4vw, 2rem);
+        margin-left: clamp(4rem, 6vw, 6rem);
+    }
+}
