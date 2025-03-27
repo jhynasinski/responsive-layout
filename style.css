@@ -42,7 +42,7 @@ header {
     display: flex;
     flex-direction: column;
     margin-left: clamp(1rem, 3vw, 4rem);
-    margin-top: clamp(0.5rem, 2vw, 2rem);
+    margin-top: clamp(1rem, 2vw, 3rem);
 }
 
 .diamond {
@@ -51,6 +51,7 @@ header {
     width: clamp(7rem, 10vw, 14rem);
     height: clamp(7rem, 10vw, 14rem);
     transform: rotate(45deg);
+    animation: spinOnce 2s ease-out;
 }
 
 .redDiamondOne {
@@ -68,6 +69,9 @@ header {
     border: 2px solid black;
     width: clamp(8rem, 12vw, 14rem);
     height: clamp(1rem, 2vw, 2rem);
+    transition: background-color 0.2s ease, width 0.2s ease, height 0.2s ease,
+        margin 0.2s ease;
+    animation: slideInLeft 2s ease forwards;
 }
 
 .singleCircle {
@@ -79,6 +83,9 @@ header {
     position: relative;
     top: clamp(-1rem, -2vw, -1rem);
     flex-shrink: 0;
+    transition: background-color 0.2s ease, width 0.2s ease, height 0.2s ease,
+        margin 0.2s ease;
+    animation: pulse 2.5s ease-in-out;
 }
 
 .boxForLinesAndCircle {
@@ -96,10 +103,17 @@ header {
     text-align: center;
     padding-top: 1rem;
     margin: clamp(1rem, 2vw, 3rem) clamp(2rem, 4vw, 4rem);
+    transition: background-color 0.2s ease, width 0.2s ease, height 0.2s ease,
+        margin 0.2s ease;
+    animation: fadeUp 1.5s ease-out forwards;
+    animation-delay: 0.8s;
+    opacity: 0;
 }
 
 .colorChangingRectangle span {
-    font-weight: bold;
+    font-family: Arial;
+    font-size: 4rem;
+    color: black;
 }
 
 @media (min-width: 583px) and (max-width: 900px) {
@@ -189,9 +203,9 @@ header {
     }
 
     .singleCircle {
-        width: clamp(8rem, 14vw, 12rem);
-        height: clamp(8rem, 14vw, 12rem);
-        top: clamp(-1rem, -1vw, 0);
+        width: clamp(6rem, 10vw, 10rem);
+        height: clamp(6rem, 10vw, 10rem);
+        top: -1vw;
         flex-shrink: 0;
     }
 
@@ -201,5 +215,54 @@ header {
         width: clamp(14rem, 50vw, 30rem);
         margin-top: clamp(1rem, 4vw, 2rem);
         margin-left: clamp(4rem, 6vw, 6rem);
+    }
+}
+
+@keyframes spinOnce {
+    0% {
+        transform: rotate(45deg);
+        background-color: red;
+    }
+    50% {
+        background-color: #280c4c;
+    }
+    100% {
+        transform: rotate(405deg);
+        background-color: red;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.25);
+        background-color: #ff0098;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
