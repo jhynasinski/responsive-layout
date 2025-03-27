@@ -1,0 +1,103 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #088404;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 96vh;
+    margin-top: 4vh;
+    gap: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4vh;
+    background: #756100;
+    border: 2px solid black;
+    z-index: 1000;
+}
+
+.redDiamonds,
+.boxForLinesAndCircle,
+.colorChangingRectangle {
+    width: 33.3333%;
+}
+
+.redDiamonds {
+    display: flex;
+    flex-direction: column;
+    margin-left: clamp(1rem, 3vw, 4rem);
+    margin-top: clamp(0.5rem, 2vw, 2rem);
+}
+
+.diamond {
+    background-color: red;
+    border: 2px solid black;
+    width: clamp(7rem, 10vw, 14rem);
+    height: clamp(7rem, 10vw, 14rem);
+    transform: rotate(45deg);
+}
+
+.redDiamondOne {
+    margin-left: clamp(7rem, 10vw, 14rem);
+}
+
+.blueLinesBox {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2vw, 2rem);
+}
+
+.blueLine {
+    background-color: blue;
+    border: 2px solid black;
+    width: clamp(8rem, 12vw, 14rem);
+    height: clamp(1rem, 2vw, 2rem);
+}
+
+.singleCircle {
+    background-color: #048488;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: clamp(6rem, 8vw, 10rem);
+    height: clamp(6rem, 8vw, 10rem);
+    position: relative;
+    top: clamp(-1rem, -2vw, -1rem);
+    flex-shrink: 0;
+}
+
+.boxForLinesAndCircle {
+    display: flex;
+    gap: clamp(1rem, 3vw, 2rem);
+    margin-top: clamp(5rem, 10vw, 15rem);
+    margin-left: clamp(2rem, 5vw, 10rem);
+}
+
+.colorChangingRectangle {
+    width: clamp(30vh, 40vw, 50vh);
+    height: clamp(40vh, 85vh, 90vh);
+    border: 2px solid black;
+    background-color: white;
+    text-align: center;
+    padding-top: 1rem;
+    margin: clamp(1rem, 2vw, 3rem) clamp(2rem, 4vw, 4rem);
+}
+
+.colorChangingRectangle span {
+    font-weight: bold;
+}
